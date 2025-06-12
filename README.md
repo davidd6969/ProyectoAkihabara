@@ -68,7 +68,6 @@ La clase `ConfigLoader` lee automáticamente el archivo `config.properties`. No 
 
 1. Compila el proyecto respetando la estructura de paquetes:
 
- ```bash
  javac -d bin src/**/*.java
 Asegúrate de que:
 
@@ -111,8 +110,7 @@ Archivos de Configuración
 El archivo config.properties ya está incluido con esta plantilla:
 
 properties
-Copiar
-Editar
+
 db.url=jdbc:mysql://localhost:3306/akihabara_db
 db.user=proyecto
 db.password=campusfp
@@ -130,8 +128,6 @@ Conexión a internet (para acceder a la API de OpenRouter)
 
 Cuenta de OpenRouter con una API key válida
 
-
-Si quieres te lo preparo en un archivo `.md` para que puedas descargarlo también. ¿Quieres?
 
 
 
