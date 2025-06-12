@@ -46,10 +46,6 @@ Este proyecto utiliza la API de OpenRouter para generar descripciones automátic
 
 api_key=xxxxxxx
 
-yaml
-Copiar
-Editar
-
 - Reemplaza las `xxxxxxx` por tu clave real de OpenRouter.
 
 > **Importante:** No subas tu clave real a repositorios públicos.
@@ -82,9 +78,6 @@ El archivo config.properties esté correctamente configurado.
 
 Ejecuta la clase principal desde la carpeta bin:
 
-bash
-Copiar
-Editar
 java view.MainMenu
 Cambia view.MainMenu por el nombre real de la clase principal si es diferente.
 
@@ -137,11 +130,6 @@ Conexión a internet (para acceder a la API de OpenRouter)
 
 Cuenta de OpenRouter con una API key válida
 
-yaml
-Copiar
-Editar
-
----
 
 Si quieres te lo preparo en un archivo `.md` para que puedas descargarlo también. ¿Quieres?
 
