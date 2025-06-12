@@ -1,81 +1,79 @@
-Proyecto Akihabara
+# Proyecto Akihabara
+
 Aplicación de consola en Java para la gestión de productos y clientes en una tienda temática, con integración de inteligencia artificial mediante la API de OpenRouter.
 
-1. Configuración de la Base de Datos MySQL
-Asegúrate de tener MySQL instalado y en ejecución.
+---
 
-Crea una base de datos llamada: akihabara_db.
+## 1. Configuración de la Base de Datos MySQL
 
-Define las siguientes tablas:
+- Asegúrate de tener MySQL instalado y en ejecución.
+- Crea una base de datos llamada: **akihabara_db**.
+- Define las siguientes tablas:
 
-Tabla productos:
+**Tabla productos:**
 
-id: INT, AUTO_INCREMENT, PRIMARY KEY
+- id: INT, AUTO_INCREMENT, PRIMARY KEY  
+- nombre: VARCHAR  
+- categoria: VARCHAR  
+- precio: DECIMAL  
+- stock: INT  
 
-nombre: VARCHAR
+**Tabla clientes:**
 
-categoria: VARCHAR
+- id: INT, AUTO_INCREMENT, PRIMARY KEY  
+- nombre: VARCHAR  
+- email: VARCHAR  
+- fecha_registro: DATE  
 
-precio: DECIMAL
+- Verifica que el usuario y contraseña definidos en `config.properties` tengan acceso a la base de datos.
 
-stock: INT
+---
 
-Tabla clientes:
+## 2. Configuración de la Inteligencia Artificial (IA)
 
-id: INT, AUTO_INCREMENT, PRIMARY KEY
-
-nombre: VARCHAR
-
-email: VARCHAR
-
-fecha_registro: DATE
-
-Verifica que el usuario y contraseña definidos en config.properties tengan acceso a la base de datos.
-
-2. Configuración de la Inteligencia Artificial (IA)
 Este proyecto utiliza la API de OpenRouter para generar descripciones automáticas y sugerencias de categorías mediante inteligencia artificial.
 
-Paso 1: Obtener tu clave API
-Accede a https://openrouter.ai/.
+### Paso 1: Obtener tu clave API
 
-Regístrate o inicia sesión.
+- Accede a [https://openrouter.ai/](https://openrouter.ai/).  
+- Regístrate o inicia sesión.  
+- Ve a la sección **API Keys** y genera una nueva clave.  
+- Copia la clave generada.
 
-Ve a la sección API Keys y genera una nueva clave.
+### Paso 2: Configurar la clave en el proyecto
 
-Copia la clave generada.
+- En el archivo `config.properties` que ya está incluido en el proyecto, busca la línea:
 
-Paso 2: Configurar la clave en el proyecto
-En el archivo config.properties que ya está incluido en el proyecto, busca la línea:
-
-ini
-Copiar
-Editar
 api_key=xxxxxxx
-Reemplaza las xxxxxxx por tu clave real de OpenRouter.
 
-Importante: No subas tu clave real a repositorios públicos.
-
-Paso 3: Verificar la carga de configuración
-La clase ConfigLoader lee automáticamente el archivo config.properties. No necesitas modificar el código si está bien configurado.
-
-Paso 4: Ejecutar la aplicación
-Al iniciar la aplicación desde consola, las funciones de IA estarán disponibles si la clave es válida y hay conexión a internet.
-
-Si recibes un error 401 ("No auth credentials found"), verifica:
-
-Que la clave esté bien escrita.
-
-Que el archivo config.properties esté en la ubicación correcta.
-
-Que la clave no haya sido revocada o expirado.
-
-Cómo compilar y ejecutar la aplicación
-Compila el proyecto respetando la estructura de paquetes:
-
-css
+yaml
 Copiar
 Editar
-javac -d bin src/**/*.java
+
+- Reemplaza las `xxxxxxx` por tu clave real de OpenRouter.
+
+> **Importante:** No subas tu clave real a repositorios públicos.
+
+### Paso 3: Verificar la carga de configuración
+
+La clase `ConfigLoader` lee automáticamente el archivo `config.properties`. No necesitas modificar el código si está bien configurado.
+
+### Paso 4: Ejecutar la aplicación
+
+- Al iniciar la aplicación desde consola, las funciones de IA estarán disponibles si la clave es válida y hay conexión a internet.  
+- Si recibes un error 401 ("No auth credentials found"), verifica:  
+- Que la clave esté bien escrita.  
+- Que el archivo `config.properties` esté en la ubicación correcta.  
+- Que la clave no haya sido revocada o expirado.
+
+---
+
+## Cómo compilar y ejecutar la aplicación
+
+1. Compila el proyecto respetando la estructura de paquetes:
+
+ ```bash
+ javac -d bin src/**/*.java
 Asegúrate de que:
 
 La base de datos esté creada y activa.
@@ -84,7 +82,7 @@ El archivo config.properties esté correctamente configurado.
 
 Ejecuta la clase principal desde la carpeta bin:
 
-nginx
+bash
 Copiar
 Editar
 java view.MainMenu
@@ -119,7 +117,7 @@ config → Carga de configuración externa (API Key, modelo, DB)
 Archivos de Configuración
 El archivo config.properties ya está incluido con esta plantilla:
 
-ini
+properties
 Copiar
 Editar
 db.url=jdbc:mysql://localhost:3306/akihabara_db
@@ -138,3 +136,18 @@ MySQL 5.7 o superior
 Conexión a internet (para acceder a la API de OpenRouter)
 
 Cuenta de OpenRouter con una API key válida
+
+yaml
+Copiar
+Editar
+
+---
+
+Si quieres te lo preparo en un archivo `.md` para que puedas descargarlo también. ¿Quieres?
+
+
+
+
+
+
+
